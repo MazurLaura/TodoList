@@ -1,17 +1,25 @@
 import React from "react";
 
 
-const Form = () => {
+const Form = ({inputText, setInputText, todos, setTodos}) => {
 
   //Every time the input changes this onChange event will run.
   const inputTextHandler = (event) => {
     console.log(event.target.value);
+    setInputText(event.target.value);
+  };
+
+  //Every time we click on submit button this event will run
+  const submitTodoHandler = (event) => {
+    event.preventDefault();
+    setTodos([...todos, {text: inputText, completed: false, id: Math.random() * 1000}]); //How the Todos should look like.
+    setInputText('');
   };
 
   return(
     <form>
-      <input onChange={inputTextHandler} type="text" className="todo-input" /> 
-      <button className="todo-button" type="submit">
+      <input onChange={inputTextHandler} value={inputText} type="text" className="todo-input" /> 
+      <button onClick={submitTodoHandler} className="todo-button" type="submit">
         <i className="fas fa-plus-square"></i>
       </button>
       <div className="select">
