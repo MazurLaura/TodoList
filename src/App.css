@@ -4,9 +4,9 @@
   box-sizing: border-box;
 }
 body {
-  background-image: linear-gradient(120deg, #c3f1de 0%, #1da17a 100%);
+  background-image: linear-gradient(120deg, #c3f1de 0%, #1c7a97 100%);
   color: white;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Kalam', cursive;
   min-height: 100vh;
 }
 header {
@@ -18,6 +18,7 @@ h1 {
   -webkit-text-stroke: 0.5px rgb(196, 243, 233);
   */
   text-shadow: 0 0 8px rgb(143, 148, 148);
+  font-family: "Poppins", sans-serif;
 }
 
 header,
@@ -33,26 +34,25 @@ form button {
   font-size: 2rem;
   border: none;
   background: white;
+  border-radius: 5px;
 }
 
-form input {
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-}
-
-form button {
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
+form input:focus {
+  outline: none;
+  box-shadow: 0 0 10px 0 rgba(10, 114, 145, 0.87);
 }
 
 form button {
-  color: #ff6f47;
+  color: #eb4b22;
   background: #f7fffe;
   cursor: pointer;
   transition: all 0.3s ease;
+  border-radius: 5px;
+  margin-left: 8px;
+  margin-right: 15px;
 }
 form button:hover {
-  background: #ff6f47;
+  background: #eb4b22;
   color: white;
 }
 .todo-container {
@@ -78,16 +78,19 @@ form button:hover {
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 }
+
 .filter-todo {
   padding: 1rem;
 }
+
 .todo li {
   flex: 1;
 }
 
+
 .trash-btn,
 .complete-btn {
-  background: #ff6f47;
+  background: #eb4b22;
   color: white;
   border: none;
   padding: 1rem;
@@ -106,10 +109,12 @@ form button:hover {
   pointer-events: none;
 }
 
+/*
 .fall {
-  transform: translateY(10rem) rotateZ(20deg);
+  transform: translateY(15rem) rotateZ(20deg);
   opacity: 0;
 }
+*/
 
 .completed {
   text-decoration: line-through;
@@ -139,10 +144,10 @@ select {
   border-bottom-right-radius: 5px;
 }
 select {
-  color: #ff6f47;
+  color: #090a0a;
   font-family: "Poppins", sans-serif;
   cursor: pointer;
-  width: 12rem;
+  width: 10rem;
 }
 /* Arrow */
 .select::after {
@@ -151,13 +156,7 @@ select {
   top: 0;
   right: 0;
   padding: 1rem;
-  background: #ff6f47;
+  background: #eb4b22;
   cursor: pointer;
   pointer-events: none;
 }
-/* Transition */
-/*
-.select:hover::after {
-  transform: scale(1.5);
-}
-*/
