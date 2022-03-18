@@ -1,3 +1,5 @@
 //README Image Test
 
-![todo-app-one!](docs/todo-app default.png)
+** The ToDo Application**
+
+![todo-app-one](https://github.com/MazurLaura/TodoList/tree/master/docs/todo-app default.png)
