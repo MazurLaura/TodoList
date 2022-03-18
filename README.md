@@ -10,11 +10,11 @@
 
 ![](docs/todo-app-default.png)
 
-The look of the select and the completed todos
+#### The look of the select and the completed todos
 
 ![](docs/todo-app-completed.png)
 
-Using the Completed select type
+#### Using the Completed select type
 
 ![](docs/todo-app-completed-only.png)
 
