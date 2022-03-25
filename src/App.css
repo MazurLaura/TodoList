@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 body {
-  background-image: linear-gradient(120deg, #c3f1de 0%, #1c7a97 100%);
+  background: radial-gradient(ellipse farthest-side at 76% 77%, rgba(245, 228, 212, 0.25) 4%, rgba(255, 255, 255, 0) calc(4% + 1px)), radial-gradient(circle at 76% 40%, #fef6ec 4%, rgba(255, 255, 255, 0) 4.18%), linear-gradient(135deg, #ff0000 0%, #000036 100%), radial-gradient(ellipse at 28% 0%, #ffcfac 0%, rgba(98, 149, 144, 0.5) 100%), linear-gradient(180deg, #cd6e8a 0%, #f5eab0 69%, #d6c8a2 70%, #a2758d 100%); background-blend-mode: normal, normal, screen, overlay, normal;
   color: white;
   font-family: 'Kalam', cursive;
   min-height: 100vh;
@@ -33,26 +33,28 @@ form button {
   padding: 0.5rem;
   font-size: 2rem;
   border: none;
-  background: white;
+  background: #fef6ec;
   border-radius: 5px;
 }
 
 form input:focus {
   outline: none;
   box-shadow: 0 0 10px 0 rgba(10, 114, 145, 0.87);
+  background-color: white;
 }
 
 form button {
-  color: #eb4b22;
-  background: #f7fffe;
+  color: #cf5acf;
+  background: #fef6ec;
   cursor: pointer;
   transition: all 0.3s ease;
   border-radius: 5px;
   margin-left: 8px;
   margin-right: 15px;
+  width: 50px;
 }
 form button:hover {
-  background: #eb4b22;
+  background: rgb(29, 218, 243);
   color: white;
 }
 .todo-container {
@@ -68,7 +70,6 @@ form button:hover {
 
 .todo {
   margin: 0.5rem;
-  background: white;
   font-size: 1.5rem;
   color: black;
   display: flex;
@@ -77,6 +78,7 @@ form button:hover {
   transition: all 1s ease;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
+  gap: 5px;
 }
 
 .filter-todo {
@@ -85,20 +87,34 @@ form button:hover {
 
 .todo li {
   flex: 1;
+  background: white;
+  padding: 7px;
+  border-radius: 5px;
+  width: 400px;
+  height: auto;
 }
 
 
 .trash-btn,
 .complete-btn {
-  background: #eb4b22;
+  background: #cf5acf;
   color: white;
   border: none;
   padding: 1rem;
   cursor: pointer;
   font-size: 1rem;
+  border-radius: 5px;
 }
+.complete-btn:hover {
+background-color: rgb(74, 216, 128);
+}
+
+.trash-btn:hover {
+  background-color: rgb(169, 17, 189);
+}
+
 .complete-btn {
-  background: rgb(5, 170, 156);
+  background: rgb(89, 238, 146);
 }
 .todo-item {
   padding: 0rem 0.5rem;
@@ -156,7 +172,24 @@ select {
   top: 0;
   right: 0;
   padding: 1rem;
-  background: #eb4b22;
+  background: #cf5acf;
   cursor: pointer;
   pointer-events: none;
+}
+
+.remove-btn {
+  margin: 20px auto;
+  background-color: #cf5acf;
+  color: white;
+  display: flex;
+  justify-content: center;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: none;font-family: "Poppins", sans-serif;
+  font-weight: 700;
+}
+
+.remove-btn:hover {
+  background-color: white;
+  color: rgb(169, 17, 189);
 }

@@ -48,6 +48,10 @@ const getLocalTodos = () => {
   }
 }
 
+const handleRemove = () => {
+  setTodos([]);
+}
+
 return (
   <div className="App">
     <header>
@@ -65,6 +69,7 @@ return (
       todos={todos}
       setTodos={setTodos}
     />
+    {todos.length > 0 && <button type="button" className="remove-btn" onClick={handleRemove}>Remove All</button>}
   </div>
 );
 }
