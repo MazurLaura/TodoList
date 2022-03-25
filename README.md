@@ -1,5 +1,7 @@
 # Todo Application
  #### This app was created with React.js and CSS. The purpose of creating this project was to get more familiar with the basics of React. While creating this app I learned how to use React Hooks in different components.
+ #### The app is live on [Netlify](https://todo-application-by-lili.netlify.app/)
+ [![Netlify Status](https://api.netlify.com/api/v1/badges/87385582-8f8b-4b28-97b6-39af20f94643/deploy-status)](https://app.netlify.com/sites/todo-application-by-lili/deploys)
 
 ## Key Learning Objectives
 * React Hooks: to manage component states and side effects.
