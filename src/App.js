@@ -14,12 +14,12 @@ function App() {
     getLocalTodos()
   }, []);
 
-  //USE EFFECT
-  useEffect(() => {
-    filterHandler();
-    saveLocalTodos();
-  }, [todos, status])
+  const saveLocalTodos = React.useCallback(() => {
+    localStorage.setItem('todos', JSON.stringify(todos));
+}, [todos]);
 
+//USE EFFECT
+useEffect(() => {
   const filterHandler = () => {
     switch (status) {
       case 'completed':
@@ -32,42 +32,41 @@ function App() {
         setFilteredTodos(todos);
         break;
     }
-  }
-
-  // Save to local storage
-
-  const saveLocalTodos = () => {
-    localStorage.setItem('todos', JSON.stringify(todos));
   };
+  filterHandler();
+  saveLocalTodos();
+}, [todos, status, saveLocalTodos])
 
-  const getLocalTodos = () => {
-    if (localStorage.getItem('todos') === null) {
-      localStorage.setItem('todos', JSON.stringify([]));
-    } else {
-      let todoLocal = JSON.parse(localStorage.getItem('todos'));
-      setTodos(todoLocal);
-    }
+
+// Save to local storage
+const getLocalTodos = () => {
+  if (localStorage.getItem('todos') === null) {
+    localStorage.setItem('todos', JSON.stringify([]));
+  } else {
+    let todoLocal = JSON.parse(localStorage.getItem('todos'));
+    setTodos(todoLocal);
   }
+}
 
-  return (
-    <div className="App">
-      <header>
-        <h1>Lili's Todo List</h1>
-      </header>
-      <Form
-        inputText={inputText}
-        todos={todos}
-        setTodos={setTodos}
-        setInputText={setInputText}
-        setStatus={setStatus}
-      />
-      <TodoList
-        filteredTodos={filteredTodos}
-        todos={todos}
-        setTodos={setTodos}
-      />
-    </div>
-  );
+return (
+  <div className="App">
+    <header>
+      <h1>Lili's Todo List</h1>
+    </header>
+    <Form
+      inputText={inputText}
+      todos={todos}
+      setTodos={setTodos}
+      setInputText={setInputText}
+      setStatus={setStatus}
+    />
+    <TodoList
+      filteredTodos={filteredTodos}
+      todos={todos}
+      setTodos={setTodos}
+    />
+  </div>
+);
 }
 
 export default App;
